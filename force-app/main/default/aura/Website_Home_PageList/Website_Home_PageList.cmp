@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:handler event="c:Website_Home_PageLoaded" action="{!c.onWebsite_Home_PageLoaded}"/>
+    <lightning:navigation aura:id="navigation"/>
+    <aura:attribute name="rows" type="Map[]"/>
+    <aura:attribute name="cols" type="Map[]"/>
+    <lightning:card title="Website_Home_Page List" iconName="standard:account">
+        <lightning:datatable
+            data="{!v.rows}"
+            columns="{!v.cols}"
+            keyField="Id"
+            hideCheckboxColumn="true"
+            showRowNumberColumn="true"
+            onrowaction="{!c.onRowAction}"/>
+    </lightning:card>
+</aura:component>
